@@ -1,0 +1,57 @@
+<div class="bike-service-container">
+  
+
+  <div class="search-container">
+    <h2>Pending Bike Services</h2>
+    <form>
+      <input
+        type="text"
+        [(ngModel)]="searchTerm"
+        (input)="onSearchChange()"
+        placeholder="Search by bike name or customer name"
+        class="search-input"
+        name="search-box"
+      />
+    </form>
+  </div>
+
+  <div class="bike-service-list">
+    <div *ngFor="let bikeService of bikeServices" class="bike-service-card">
+        <button
+      class="cancel-booking-btn"
+      title="Cancel Booking"
+    >
+      <img src="../assets/cancel.jpg" alt="Cancel" class="cancel-icon" />
+      <span class="cancel-text">Cancel</span>
+    </button>
+      <h3>{{ bikeService.name }}</h3>
+      <h4>{{ bikeService.bikeModel }}</h4>
+      <p class="status" [ngClass]="bikeService.serviceStatus">
+        {{ bikeService.serviceStatus }}
+      </p>
+      <div class="buttons">
+        <button
+          class="btn"
+          (click)="updateStatus(bikeService.id, 'PENDING')"
+          [disabled]="bikeService.serviceStatus === 'PENDING'"
+        >
+          Pending
+        </button>
+        <button
+          class="btn"
+          (click)="updateStatus(bikeService.id, 'INPROGRESS')"
+          [disabled]="bikeService.serviceStatus === 'INPROGRESS'"
+        >
+          In Progress
+        </button>
+        <button
+          class="btn"
+          (click)="updateStatus(bikeService.id, 'COMPLETED')"
+          [disabled]="bikeService.serviceStatus === 'COMPLETED'"
+        >
+          Completed
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+/* app.component.css */
+.app-container {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .app-header {
+    background-color: #4CAF50; /* A vibrant green for the header */
+    color: white;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+  }
+  
+    .app-header .logo {
+      margin-right: 20px; /* Space between logo and text */
+    }
+  
+    .app-header .logo-img {
+      width: 40px; /* Logo width */
+      height: auto;
+    }
+  
+    .app-header .app-title {
+      font-size: 32px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin: 0;
+    }
+  
+  /* Responsive Design: Ensures the logo and title adjust on smaller screens */
+  @media (max-width: 768px) {
+    .app-header {
+      flex-direction: column;
+    }
+  
+      .app-header .logo {
+        margin-bottom: 10px;
+      }
+  }
+  
