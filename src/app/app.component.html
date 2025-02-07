@@ -1,20 +1,9 @@
-<!-- app.component.html -->
-<div class="container">
-  <header class="app-header py-4">
-    <div class="row justify-content-center align-items-center">
-      <div class="col-2">
-        <img src="assets/logo.png" alt="Bike Service Logo" class="logo-img img-fluid" />
-      </div>
-      <div class="col-8">
-        <h1 class="app-title text-center text-white">Bike Service Booking</h1>
+
+   
+    <div class="background" #background (click)="changeBackground()">
+      <div class="content">
+        
       </div>
     </div>
-  </header>
-
-  <div class="content mt-5">
-    <!-- This is where the routed components will be displayed -->
     <router-outlet></router-outlet>
-  </div>
-
-  <!-- WhatsApp button component -->
-</div>
+  

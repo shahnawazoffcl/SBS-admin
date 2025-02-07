@@ -6,11 +6,17 @@ import { AppComponent } from './app.component';
 import { BikeServiceComponent } from './components/bike-service/bike-service.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { LoginComponent } from './components/login/login.component';
+import { AuthService } from './auth.service';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BikeServiceComponent
+    BikeServiceComponent,
+    NavbarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -18,7 +24,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
