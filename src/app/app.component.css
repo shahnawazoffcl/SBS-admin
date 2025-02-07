@@ -1,44 +1,31 @@
-/* app.component.css */
-.app-container {
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .app-header {
-    background-color: #4CAF50; /* A vibrant green for the header */
-    color: white;
-    padding: 15px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 8px;
-  }
-  
-    .app-header .logo {
-      margin-right: 20px; /* Space between logo and text */
-    }
-  
-    .app-header .logo-img {
-      width: 40px; /* Logo width */
-      height: auto;
-    }
-  
-    .app-header .app-title {
-      font-size: 32px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      margin: 0;
-    }
-  
-  /* Responsive Design: Ensures the logo and title adjust on smaller screens */
-  @media (max-width: 768px) {
-    .app-header {
-      flex-direction: column;
-    }
-  
-      .app-header .logo {
-        margin-bottom: 10px;
-      }
-  }
-  
+/* Full-screen background container */
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  transition: background-image 1s ease-in-out; /* Smooth transition */
+  z-index: -1; /* Ensures content is on top of the background */
+}
+
+/* Content in the foreground */
+.content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  padding: 50px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.5em;
+}
